@@ -18,6 +18,7 @@ function agregarAmigo () {
         amigos.push(amigo)
         document.querySelector('#listaAmigos').insertAdjacentHTML("beforeend",`<li>${amigo}</li>`);
         document.querySelector('#amigo').value = '';
+        document.querySelector('#resultado').innerHTML = ""
         console.log(amigos);
         return
     }
@@ -25,11 +26,15 @@ function agregarAmigo () {
 
 function sortearAmigo(){
     if (amigos.length > 0){
-        
-        return document.querySelector('#resultado').innerHTML = `El amigo secreto es: ${amigos[Math.floor(Math.random()*amigos.length)]}`
+        let resultado = document.querySelector('#resultado').innerHTML = `El amigo secreto es: ${amigos[Math.floor(Math.random()*amigos.length)]}`
+        amigos = []
+
+        return resultado
     }
     else {
-        alert ('No hay ningun nombre para sortear')
+        document.querySelector('#listaAmigos').innerHTML = ""
+        document.querySelector('#resultado').innerHTML = "No hay ningun nombre para sortear"
+        
         return
     }
 }
