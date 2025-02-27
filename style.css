@@ -125,6 +125,11 @@ button {
     background-color: #a1a1a1;
 }
 
+#sortear:disabled {
+    background-color: #a1a1a1;
+    cursor: default;
+}
+
 /* Listas */
 ul {
     list-style-type: none;
